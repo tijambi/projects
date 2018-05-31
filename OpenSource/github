@@ -1,0 +1,44 @@
+Step 1: Create a GitHub account
+Step 2: Create a new repository
+Step 3: Create a file
+	
+	$ mkdir projects
+
+# Change your terminal to the Demo directory with the command:
+
+	$ cd projects/
+
+# This creates a file named README.md and writes #Demo in it:
+
+	$ eecho "#projects" >> README.md
+
+# To check that the file was created successfully, enter:
+(This will show you what is inside the README.md file, if the file was  created correctly).
+
+	$ cat README.md
+
+
+# To tell your computer that Demo is a directory managed by the Git program, enter:
+
+	$ git init
+# Then, to tell the Git program you care about this file and want to track any changes from this point forward, enter:
+
+	$ git add README.md
+
+Step 4: Make a commit
+
+# To make a commit, enter:
+
+	$ sudo git commit -m "first commit"
+
+Step 5: Connect your GitHub repo with your computer
+
+# Now, it's time to connect your computer to GitHub with the command:
+(We are telling Git to add a remote called origin with the address https://github.com/<your_username>/Demo.git (i.e., the URL of your Git repo on GitHub.com). This allows you to interact with your Git repository on GitHub.com by typing origin instead of the full URL and Git will know where to send your code)
+ 	
+	$ git remote add origin https://github.com/tijambi/projects
+
+# Now that we have added the remote, we can push our code (i.e., upload our README.md file) to GitHub.com.
+
+	$ sudo git push -u origin master
+
