@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF9FE8F1"
+    tools:context="com.jerry.steve.my_bmi.MainActivity">
+
+    <!-- Text view for app title text -->
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/HeadingTheme"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@+id/container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#FA318093"
+        />
+
+    <!-- Linear layout start here -->
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/appTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/contain"
+        android:orientation="vertical">
+
+        <!-- Text view for BMI Text -->
+        <TextView
+            android:id="@+id/showBMI"
+            style="@style/TextTheme"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/content_show_bmi"
+            android:text="@string/default_show_bmi"
+            android:textColor="#FA318093"/>
+
+        <TextView
+            android:id="@+id/showImpBMI"
+            style="@style/TextTheme"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/content_show_result"
+            android:text="@string/default_show_result"
+            android:textColor="#FA318093"/>
+
+        <!-- Text view for showing result -->
+        <TextView
+            android:id="@+id/showResult"
+            style="@style/TextTheme"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/content_show_result"
+            android:text="@string/default_show_result"
+            android:textColor="#FA318093"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/contain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/LinearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/container"
+        android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Edit text for entering weight with hint in kgs -->
+        <EditText
+            android:labelFor="@id/inputKg"
+            android:id="@+id/inputKg"
+            style="@style/TextTheme"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/content_user_answer"
+            android:ems="4"
+            android:inputType="numberDecimal"
+            />
+
+        <!-- Edit text for entering height with hint in m -->
+        <EditText
+            android:labelFor="@id/inputM"
+            android:id="@+id/inputM"
+            style="@style/TextTheme"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/content_user_answer"
+            android:ems="4"
+            android:inputType="numberDecimal"
+            />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Textview for WEIGHT(KG) text -->
+            <TextView
+                style="@style/TextTheme"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/text_label_kg"
+                android:textColor="#FA318093"/>
+
+            <!-- Text view for HEIGHT(CM)text -->
+            <TextView
+                style="@style/TextTheme"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/text_label_m"
+                android:textColor="#FA318093"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Text fields for text inputs in kg and m -->
+    <LinearLayout
+        android:id="@+id/LinearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/contain"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Button for exiting the Application, when pressed, with exit written over it -->
+        <Button
+            android:id="@+id/buttonExit"
+            style="@style/ButtonTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/content_button_exit"
+            android:text="@string/text_button_exit"
+            android:background="#FF42A0B7"
+            android:textColor="#FFF4F5F5"/>
+
+        <!-- Button for calculating the formula, when pressed, with calculate written over it -->
+        <Button
+            android:id="@+id/buttonCalculate"
+            style="@style/ButtonTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/content_button_calculate"
+            android:text="@string/text_button_calculate"
+            android:background="#FF42A0B7"
+            android:textColor="#FFF4F5F5"/>
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
